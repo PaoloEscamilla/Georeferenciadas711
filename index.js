@@ -45,8 +45,8 @@ app.get("/users", (req, res) => {
   }
 });
 
-// Middleware para manejar rutas no encontradas
-app.use('*', (req, res) => {
+// Middleware para manejar rutas no encontradas - FIXED for Express 5.x
+app.use((req, res) => {
   res.status(404).json({
     error: 'Ruta no encontrada',
     message: `La ruta ${req.originalUrl} no existe`,

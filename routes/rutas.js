@@ -6,12 +6,15 @@ const brandsRouter = require('./brandsRouter');
 
 function routerApi(app) {
   const router = express.Router();
+
+  // Registrar el router principal en /api/v1
   app.use('/api/v1', router);
 
-  router.use('/products', productsRouter);
+  // Registrar los routers de cada entidad
   router.use('/users', usersRouter);
   router.use('/categories', categoriesRouter);
   router.use('/brands', brandsRouter);
+  router.use('/products', productsRouter);
 }
 
 module.exports = routerApi;
